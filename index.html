@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Momo ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+<source src="august.mp3" type="audio/mp3">
+</audio>
+
+<!-- DATE SCREEN -->
+
+<section id="dateScreen" class="screen active">
+
+<div class="date-box">
+
+<img src="cover.jpg" class="date-photo">
+
+<h1>26 / 08</h1>
+
+<p>A Special Day ❤️</p>
+
+<button onclick="showPasscode()">
+Continue
+</button>
+
+</div>
+
+</section>
+
+<!-- PASSCODE SCREEN -->
+
+<section id="passcodeScreen" class="screen">
+
+<div class="pass-wrapper">
+
+<div class="polaroid">
+
+<img src="photo1.jpg">
+
+<h3>Momo ❤️</h3>
+
+</div>
+
+<div class="lock-box">
+
+<h2>Enter Passcode</h2>
+
+<div id="display">
+● ● ● ●
+</div>
+
+<div class="keypad">
+
+<button onclick="addDigit('1')">1</button>
+<button onclick="addDigit('2')">2</button>
+<button onclick="addDigit('3')">3</button>
+
+<button onclick="addDigit('4')">4</button>
+<button onclick="addDigit('5')">5</button>
+<button onclick="addDigit('6')">6</button>
+
+<button onclick="addDigit('7')">7</button>
+<button onclick="addDigit('8')">8</button>
+<button onclick="addDigit('9')">9</button>
+
+<button onclick="clearPass()">⌫</button>
+<button onclick="addDigit('0')">0</button>
+<button onclick="checkPass()">✓</button>
+
+</div>
+
+<p id="error"></p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LOADING -->
+
+<section id="loadingScreen" class="screen">
+
+<h2>Hey Momo 🌸</h2>
+
+<p>Loading your birthday surprise...</p>
+
+<div class="loader">
+
+<div class="progress"></div>
+
+</div>
+
+</section>
+
+<!-- ENVELOPE -->
+
+<section id="envelopeScreen" class="screen">
+
+<div class="card">
+
+<h1>
+Happy Birthday
+Momo ❤️
+</h1>
+
+<div class="envelope" onclick="openEnvelope()">
+
+<div class="front"></div>
+
+<div class="letter">
+
+💌
+
+</div>
+
+</div>
+
+<p>Click the envelope</p>
+
+</div>
+
+</section>
+
+<!-- CAKE -->
+
+<section id="cakeScreen" class="screen">
+
+<h2>✨ Make A Wish ✨</h2>
+
+<div class="cake-box">
+
+<div class="fireworks">🎆 ✨ 🎇 ✨ 🎆</div>
+
+<div class="cake">
+🎂
+</div>
+
+<div class="fireworks">🎆 ✨ 🎇 ✨ 🎆</div>
+
+</div>
+
+
+<button onclick="showHero()">
+
+Blow Candles
+
+</button>
+
+</section>
+
+<!-- HERO PAGE -->
+
+<section id="heroScreen" class="screen">
+
+<div class="hero-overlay">
+
+<p class="date">
+26 • 08
+</p>
+
+<h1>
+Happy Birthday
+Momo ❤️
+</h1>
+
+<p class="hero-text">
+
+I hope this little surprise
+brings a smile to your face
+and makes your day
+a little more special.
+
+</p>
+
+<button onclick="showLetter()">
+
+Read Your Letter 💌
+
+</button>
+
+</div>
+
+</section>
+
+<!-- LETTER -->
+
+<section id="letterScreen" class="screen">
+
+<div class="letter-container">
+
+<div class="letter-paper">
+
+<h2>Dear Momo ❤️</h2>
+
+<p>
+
+Some people become memories,
+some become comfort,
+and some become the reason
+you smile without any reason.
+
+You are one of them.
+
+I don't know what tomorrow brings,
+but today I want you to know
+that you're appreciated,
+you're special,
+and you deserve every happiness
+this world can offer.
+
+May your life be filled with
+beautiful moments,
+endless smiles,
+and dreams coming true.
+
+Happy Birthday Momo 🌸
+
+</p>
+
+</div>
+
+<div class="side-photos">
+
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+
+</div>
+
+</div>
+
+<button onclick="showGallery()">
+
+Open Memories 📸
+
+</button>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="galleryScreen" class="screen">
+
+<h1>
+Momo's Little Moments ✨
+</h1>
+
+<div class="gallery">
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+<img src="photo7.jpg">
+<img src="photo8.jpg">
+
+</div>
+
+<div class="final-msg">
+
+<h2>
+Thank You For Existing ❤️
+</h2>
+
+<p>
+
+You make ordinary days
+feel a little more beautiful.
+
+Happy Birthday Momo 🌸
+
+</p>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+</body>
+</html>
