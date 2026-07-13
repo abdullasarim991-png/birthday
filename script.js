@@ -113,57 +113,45 @@ function openEnvelope() {
 // =====================
 // HERO
 // =====================
-function showHero() {
+function showHero(){
 
-    hideAll();
-    heroScreen.style.display = "flex";
+    // Blow candles
+    document.getElementById("flame1").style.opacity = "0";
+    document.getElementById("flame2").style.opacity = "0";
+    document.getElementById("flame3").style.opacity = "0";
 
-    const container = document.body;
+    // Confetti
+    confetti({
+        particleCount: 300,
+        spread: 180,
+        origin: { y: 0.6 }
+    });
 
-    const fireworks = new Fireworks.default(container, {
-        rocketsPoint: 50,
-        hue: { min: 0, max: 360 },
-        delay: { min: 15, max: 30 },
-        speed: 3,
-        acceleration: 1.05,
-        friction: 0.96,
-        gravity: 1.5,
-        particles: 120,
-        trace: 5,
-        explosion: 8,
-        autoresize: true
+    // Fireworks
+    const fireworks = new Fireworks.default(document.body,{
+        autoresize:true,
+        rocketsPoint:50,
+        hue:{min:0,max:360},
+        delay:{min:10,max:20},
+        speed:3,
+        acceleration:1.05,
+        friction:0.95,
+        gravity:1.4,
+        particles:120,
+        trace:4,
+        explosion:8
     });
 
     fireworks.start();
 
-    setTimeout(() => {
+    setTimeout(()=>{
         fireworks.stop();
-    }, 7000);
 
-    const duration = 7000;
-    const end = Date.now() + duration;
+        hideAll();
+        heroScreen.style.display="flex";
 
-    (function frame() {
+    },4000);
 
-        confetti({
-            particleCount: 8,
-            angle: 60,
-            spread: 90,
-            origin: { x: 0 }
-        });
-
-        confetti({
-            particleCount: 8,
-            angle: 120,
-            spread: 90,
-            origin: { x: 1 }
-        });
-
-        if (Date.now() < end) {
-            requestAnimationFrame(frame);
-        }
-
-    })();
 }
 // =====================
 // LETTER
