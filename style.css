@@ -533,3 +533,107 @@ text-shadow:
 .hero-overlay h1{
 animation:glow 2s infinite alternate;
 }
+/* ===== REAL BIRTHDAY CAKE ===== */
+
+.cake-box{
+display:flex;
+justify-content:center;
+align-items:center;
+margin:40px 0;
+}
+
+.birthday-cake{
+position:relative;
+width:240px;
+height:260px;
+}
+
+.cake-shadow{
+position:absolute;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:210px;
+height:22px;
+background:rgba(0,0,0,.15);
+border-radius:50%;
+}
+
+.cake-base{
+position:absolute;
+bottom:20px;
+left:20px;
+width:200px;
+height:80px;
+background:#ff9ec4;
+border-radius:12px;
+}
+
+.cake-middle{
+position:absolute;
+bottom:95px;
+left:40px;
+width:160px;
+height:60px;
+background:#ffc7dc;
+border-radius:12px;
+}
+
+.cake-top{
+position:absolute;
+bottom:150px;
+left:60px;
+width:120px;
+height:45px;
+background:#ffe8f1;
+border-radius:12px;
+}
+
+.icing{
+position:absolute;
+bottom:188px;
+left:60px;
+width:120px;
+height:12px;
+background:white;
+border-radius:20px;
+}
+
+.candles{
+position:absolute;
+bottom:198px;
+left:68px;
+display:flex;
+gap:22px;
+}
+
+.candle{
+width:10px;
+height:35px;
+background:#7fd3ff;
+position:relative;
+border-radius:3px;
+}
+
+.flame{
+position:absolute;
+top:-14px;
+left:50%;
+transform:translateX(-50%);
+width:12px;
+height:18px;
+background:gold;
+border-radius:50% 50% 50% 50%;
+animation:flicker .5s infinite alternate;
+}
+
+@keyframes flicker{
+from{
+transform:translateX(-50%) scale(1);
+opacity:1;
+}
+to{
+transform:translateX(-50%) scale(1.2);
+opacity:.6;
+}
+}
