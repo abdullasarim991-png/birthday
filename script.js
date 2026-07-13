@@ -116,26 +116,46 @@ function openEnvelope() {
 function showHero() {
 
     hideAll();
-
     heroScreen.style.display = "flex";
 
-    const duration = 5000;
+    const container = document.body;
 
+    const fireworks = new Fireworks.default(container, {
+        rocketsPoint: 50,
+        hue: { min: 0, max: 360 },
+        delay: { min: 15, max: 30 },
+        speed: 3,
+        acceleration: 1.05,
+        friction: 0.96,
+        gravity: 1.5,
+        particles: 120,
+        trace: 5,
+        explosion: 8,
+        autoresize: true
+    });
+
+    fireworks.start();
+
+    setTimeout(() => {
+        fireworks.stop();
+    }, 7000);
+
+    const duration = 7000;
     const end = Date.now() + duration;
 
     (function frame() {
 
         confetti({
-            particleCount: 5,
+            particleCount: 8,
             angle: 60,
-            spread: 80,
+            spread: 90,
             origin: { x: 0 }
         });
 
         confetti({
-            particleCount: 5,
+            particleCount: 8,
             angle: 120,
-            spread: 80,
+            spread: 90,
             origin: { x: 1 }
         });
 
@@ -143,8 +163,7 @@ function showHero() {
             requestAnimationFrame(frame);
         }
 
-    }());
-
+    })();
 }
 // =====================
 // LETTER
@@ -232,38 +251,3 @@ setInterval(() => {
 // =====================
 // START
 // =====================
-
-dateScreen.style.display = "flex";
-setInterval(() => {
-
-const firework = document.createElement("div");
-
-firework.innerHTML = "✨";
-
-firework.style.position = "fixed";
-firework.style.left = Math.random()*100 + "vw";
-firework.style.top = Math.random()*100 + "vh";
-firework.style.fontSize = (20 + Math.random()*30) + "px";
-firework.style.zIndex = "999";
-
-document.body.appendChild(firework);
-
-firework.animate([
-{
-transform:"scale(0)",
-opacity:1
-},
-{
-transform:"scale(3)",
-opacity:0
-}
-],
-{
-duration:1200
-});
-
-setTimeout(()=>{
-firework.remove();
-},1200);
-
-},300);
