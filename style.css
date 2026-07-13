@@ -641,3 +641,63 @@ transform:translateX(-50%) scale(1.2);
 opacity:.6;
 }
 }
+/* ===== PART 2 : 3D CAKE ===== */
+
+.cake-base{
+background:linear-gradient(to bottom,#ff9dc8,#ff6fa5);
+border-bottom:8px solid #e75480;
+box-shadow:0 12px 18px rgba(0,0,0,.2);
+}
+
+.cake-middle{
+background:linear-gradient(to bottom,#ffd6e8,#ffb6d2);
+border-bottom:6px solid #ff8fbb;
+box-shadow:0 8px 14px rgba(0,0,0,.15);
+}
+
+.cake-top{
+background:linear-gradient(to bottom,#fff7fb,#ffe3ef);
+border-bottom:5px solid #ffc4dd;
+box-shadow:0 6px 10px rgba(0,0,0,.12);
+}
+
+.icing{
+height:18px;
+background:white;
+border-radius:20px;
+box-shadow:0 3px 6px rgba(0,0,0,.1);
+}
+
+.icing::before,
+.icing::after{
+content:"";
+position:absolute;
+background:white;
+width:14px;
+height:18px;
+border-radius:0 0 12px 12px;
+}
+
+.icing::before{
+left:18px;
+top:12px;
+}
+
+.icing::after{
+right:18px;
+top:12px;
+}
+
+.candle{
+background:repeating-linear-gradient(
+45deg,
+#8fd3ff 0 6px,
+#ffffff 6px 12px
+);
+border-radius:4px;
+}
+
+.flame{
+background:radial-gradient(circle,#fff8a8,#ffb300,#ff6a00);
+box-shadow:0 0 10px gold;
+}
