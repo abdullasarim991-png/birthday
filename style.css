@@ -540,12 +540,16 @@ display:flex;
 justify-content:center;
 align-items:center;
 margin:40px 0;
+
+position:relative;
+z-index:5;`  
 }
 
 .birthday-cake{
 position:relative;
 width:240px;
 height:260px;
+z-index:10;  
 }
 
 .cake-shadow{
