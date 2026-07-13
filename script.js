@@ -113,45 +113,97 @@ function openEnvelope() {
 // =====================
 // HERO
 // =====================
-function showHero(){
+function blowCandles(){
 
-    // Blow candles
-    document.getElementById("flame1").style.opacity = "0";
-    document.getElementById("flame2").style.opacity = "0";
-    document.getElementById("flame3").style.opacity = "0";
+document.querySelectorAll(".flame").forEach(f=>{
 
-    // Confetti
-    confetti({
-        particleCount: 300,
-        spread: 180,
-        origin: { y: 0.6 }
-    });
+f.style.opacity="0";
 
-    // Fireworks
-    const fireworks = new Fireworks.default(document.body,{
-        autoresize:true,
-        rocketsPoint:50,
-        hue:{min:0,max:360},
-        delay:{min:10,max:20},
-        speed:3,
-        acceleration:1.05,
-        friction:0.95,
-        gravity:1.4,
-        particles:120,
-        trace:4,
-        explosion:8
-    });
+});
 
-    fireworks.start();
+// Smoke
 
-    setTimeout(()=>{
-        fireworks.stop();
+document.querySelectorAll(".flame").forEach(f=>{
 
-        hideAll();
-        heroScreen.style.display="flex";
+const smoke=document.createElement("div");
 
-    },4000);
+smoke.className="smoke";
 
+smoke.style.left=(f.getBoundingClientRect().left)+"px";
+
+smoke.style.top=(f.getBoundingClientRect().top)+"px";
+
+document.body.appendChild(smoke);
+
+setTimeout(()=>{
+
+smoke.remove();
+
+},2000);
+
+});
+
+// Cake Confetti
+
+confetti({
+
+particleCount:250,
+
+spread:180,
+
+origin:{y:.65}
+
+});
+
+// Hero Page
+
+setTimeout(()=>{
+
+hideAll();
+
+heroScreen.style.display="flex";
+
+// Hero Confetti
+
+const end=Date.now()+5000;
+
+(function frame(){
+
+confetti({
+
+particleCount:8,
+
+angle:60,
+
+spread:80,
+
+origin:{x:0}
+
+});
+
+confetti({
+
+particleCount:8,
+
+angle:120,
+
+spread:80,
+
+origin:{x:1}
+
+});
+
+if(Date.now()<end){
+
+requestAnimationFrame(frame);
+
+}
+
+})();
+
+},2500);
+
+}
 }
 // =====================
 // LETTER
