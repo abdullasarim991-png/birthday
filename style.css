@@ -546,8 +546,8 @@ margin:20px 0;
 }
 
 .real-cake{
-width:300px;
-max-width:90%;
+width:420px;
+max-width:95%;
 animation:cakeFloat 3s ease-in-out infinite;
 filter:drop-shadow(0 15px 30px rgba(0,0,0,.25));
 }
@@ -572,7 +572,7 @@ transform:translateY(0);
 
 position:absolute;
 
-top:38px;
+top:18px;
 
 left:50%;
 
@@ -580,23 +580,25 @@ transform:translateX(-50%);
 
 display:flex;
 
-gap:38px;
+gap:55px;
+
+z-index:10;  
 
 }
 
 .flame{
 
-width:12px;
+width:16px;
 
-height:20px;
+height:26px;
 
 background:gold;
 
 border-radius:50%;
 
-box-shadow:0 0 15px orange;
+box-shadow:0 0 20px orange;
 
-animation:flicker .5s infinite alternate;
+animation:flicker .4s infinite alternate;
 
 }
 
