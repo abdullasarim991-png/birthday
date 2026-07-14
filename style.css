@@ -533,3 +533,81 @@ text-shadow:
 .hero-overlay h1{
 animation:glow 2s infinite alternate;
 }
+/* ===================== */
+/* REAL CAKE */
+/* ===================== */
+
+.cake-box{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:20px 0;
+}
+
+.real-cake{
+width:300px;
+max-width:90%;
+animation:cakeFloat 3s ease-in-out infinite;
+filter:drop-shadow(0 15px 30px rgba(0,0,0,.25));
+}
+
+@keyframes cakeFloat{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.candles{
+
+position:absolute;
+
+top:38px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+display:flex;
+
+gap:38px;
+
+}
+
+.flame{
+
+width:12px;
+
+height:20px;
+
+background:gold;
+
+border-radius:50%;
+
+box-shadow:0 0 15px orange;
+
+animation:flicker .5s infinite alternate;
+
+}
+
+@keyframes flicker{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.2);
+}
+
+}
