@@ -113,98 +113,58 @@ function openEnvelope() {
 // =====================
 // HERO
 // =====================
-function blowCandles(){
+function showHero() {
 
-document.querySelectorAll(".flame").forEach(f=>{
+    hideAll();
+    heroScreen.style.display = "flex";
 
-f.style.opacity="0";
+    const container = document.body;
 
-});
+    const fireworks = new Fireworks.default(container, {
+        rocketsPoint: 50,
+        hue: { min: 0, max: 360 },
+        delay: { min: 15, max: 30 },
+        speed: 3,
+        acceleration: 1.05,
+        friction: 0.96,
+        gravity: 1.5,
+        particles: 120,
+        trace: 5,
+        explosion: 8,
+        autoresize: true
+    });
 
-// Smoke
+    fireworks.start();
 
-document.querySelectorAll(".flame").forEach(f=>{
+    setTimeout(() => {
+        fireworks.stop();
+    }, 7000);
 
-const smoke=document.createElement("div");
+    const duration = 7000;
+    const end = Date.now() + duration;
 
-smoke.className="smoke";
+    (function frame() {
 
-smoke.style.left=(f.getBoundingClientRect().left)+"px";
+        confetti({
+            particleCount: 8,
+            angle: 60,
+            spread: 90,
+            origin: { x: 0 }
+        });
 
-smoke.style.top=(f.getBoundingClientRect().top)+"px";
+        confetti({
+            particleCount: 8,
+            angle: 120,
+            spread: 90,
+            origin: { x: 1 }
+        });
 
-document.body.appendChild(smoke);
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
 
-setTimeout(()=>{
-
-smoke.remove();
-
-},2000);
-
-});
-
-// Cake Confetti
-
-confetti({
-
-particleCount:250,
-
-spread:180,
-
-origin:{y:.65}
-
-});
-
-// Hero Page
-
-setTimeout(()=>{
-
-hideAll();
-
-heroScreen.style.display="flex";
-
-// Hero Confetti
-
-const end=Date.now()+5000;
-
-(function frame(){
-
-confetti({
-
-particleCount:8,
-
-angle:60,
-
-spread:80,
-
-origin:{x:0}
-
-});
-
-confetti({
-
-particleCount:8,
-
-angle:120,
-
-spread:80,
-
-origin:{x:1}
-
-});
-
-if(Date.now()<end){
-
-requestAnimationFrame(frame);
-
+    })();
 }
-
-})();
-
-},2500);
-
-}
-
 // =====================
 // LETTER
 // =====================
