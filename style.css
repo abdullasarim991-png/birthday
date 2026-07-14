@@ -574,7 +574,7 @@ transform:translateY(0);
 
 position:absolute;
 
-top:20px;
+top:15px;
 
 left:50%;
 
@@ -582,7 +582,7 @@ transform:translateX(-50%);
 
 display:flex;
 
-gap:70px;
+gap:58px;
 
 z-index:10;  
 
