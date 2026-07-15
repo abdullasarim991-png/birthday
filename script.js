@@ -113,6 +113,23 @@ function openEnvelope() {
 // =====================
 // HERO
 // =====================
+function blowCandles(){
+
+    document.querySelectorAll(".flame").forEach(flame=>{
+
+        flame.style.transition=".8s";
+        flame.style.opacity="0";
+        flame.style.transform="scale(0)";
+
+    });
+
+    setTimeout(()=>{
+
+        showHero();
+
+    },1200);
+
+}
 function showHero() {
 
     hideAll();
