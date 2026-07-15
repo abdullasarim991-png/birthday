@@ -133,7 +133,10 @@ function blowCandles(){
 function showHero() {
 
     hideAll();
+
     heroScreen.style.display = "flex";
+    heroScreen.style.visibility = "visible";
+    heroScreen.style.opacity = "1";
 
     const container = document.body;
 
@@ -171,7 +174,7 @@ function showHero() {
 
         confetti({
             particleCount: 20,
-            angle: 120,
+            angle: 60,
             spread: 120,
             origin: { x: 1 }
         });
@@ -181,6 +184,7 @@ function showHero() {
         }
 
     })();
+
 }
 // =====================
 // LETTER
