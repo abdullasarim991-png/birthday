@@ -113,21 +113,11 @@ function openEnvelope() {
 // =====================
 // HERO
 // =====================
-function blowCandles(){
+function blowCandles() {
 
-    document.querySelectorAll(".flame").forEach(flame=>{
+    alert("blowCandles chal gaya");
 
-        flame.style.transition=".8s";
-        flame.style.opacity="0";
-        flame.style.transform="scale(0)";
-
-    });
-
-    setTimeout(()=>{
-
-        showHero();
-
-    },1200);
+    showHero();
 
 }
 function showHero() {
