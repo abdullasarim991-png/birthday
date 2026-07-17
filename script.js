@@ -132,34 +132,15 @@ function blowCandles(){
 }
 function showHero() {
 
+   function showHero() {
+
     hideAll();
 
     heroScreen.style.display = "flex";
     heroScreen.style.visibility = "visible";
     heroScreen.style.opacity = "1";
 
-    const container = document.body;
-
-    const fireworks = new Fireworks.default(container, {
-        rocketsPoint: 80,
-        hue: { min: 0, max: 360 },
-        delay: { min: 15, max: 30 },
-        speed: 5,
-        acceleration: 1.08,
-        friction: 0.96,
-        gravity: 1.5,
-        particles: 120,
-        trace: 8,
-        explosion: 10,
-        autoresize: true
-    });
-
-    fireworks.start();
-
-    setTimeout(() => {
-        fireworks.stop();
-    }, 7000);
-
+    // Confetti
     const duration = 7000;
     const end = Date.now() + duration;
 
@@ -184,7 +165,7 @@ function showHero() {
         }
 
     })();
-
+}
 }
 // =====================
 // LETTER
