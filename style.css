@@ -239,16 +239,24 @@ margin-bottom:25px;
 font-family:'Great Vibes',cursive;
 }
 
-.fireworks{
-font-size:55px;
-animation:fireworks 1s infinite;
-margin:10px 0;
+#fireworksCanvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:9999;
+display:none;
 }
 
-@keyframes fireworks{
-0%{transform:scale(1);}
-50%{transform:scale(1.2);}
-100%{transform:scale(1);}
+#cakeScreen.dark{
+background:#111;
+transition:1s;
+}
+
+#cakeScreen.dark::before{
+opacity:0;
 }
 
 .cake-box{
