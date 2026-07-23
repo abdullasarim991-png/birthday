@@ -552,3 +552,32 @@ text-shadow:
 .hero-overlay h1{
 animation:glow 2s infinite alternate;
 }
+#fireworksCanvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:none;
+pointer-events:none;
+z-index:999;
+}
+
+#cakeScreen.dark{
+background:#111;
+transition:background 1s;
+}
+
+#cakeScreen.dark::before{
+opacity:0;
+}
+
+.hero-overlay{
+position:relative;
+z-index:1000;
+}
+
+.real-cake{
+position:relative;
+z-index:5;
+}
