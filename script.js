@@ -113,40 +113,49 @@ function openEnvelope() {
 // =====================
 // HERO
 // =====================
-function blowCandles() {
-
-    alert("blowCandles chal gaya");
-
-    showHero();
-
-}
 function showHero() {
 
-   function showHero() {
-
     hideAll();
-
     heroScreen.style.display = "flex";
-    heroScreen.style.visibility = "visible";
-    heroScreen.style.opacity = "1";
 
-    // Confetti
+    const container = document.body;
+
+    const fireworks = new Fireworks.default(container, {
+        rocketsPoint: 50,
+        hue: { min: 0, max: 360 },
+        delay: { min: 15, max: 30 },
+        speed: 3,
+        acceleration: 1.05,
+        friction: 0.96,
+        gravity: 1.5,
+        particles: 120,
+        trace: 5,
+        explosion: 8,
+        autoresize: true
+    });
+
+    fireworks.start();
+
+    setTimeout(() => {
+        fireworks.stop();
+    }, 7000);
+
     const duration = 7000;
     const end = Date.now() + duration;
 
     (function frame() {
 
         confetti({
-            particleCount: 20,
-            angle: 120,
-            spread: 120,
+            particleCount: 8,
+            angle: 60,
+            spread: 90,
             origin: { x: 0 }
         });
 
         confetti({
-            particleCount: 20,
-            angle: 60,
-            spread: 120,
+            particleCount: 8,
+            angle: 120,
+            spread: 90,
             origin: { x: 1 }
         });
 
@@ -155,7 +164,6 @@ function showHero() {
         }
 
     })();
-}
 }
 // =====================
 // LETTER
@@ -243,34 +251,3 @@ setInterval(() => {
 // =====================
 // START
 // =====================
-function launchFireworks() {
-    const colors = [
-        "#ff4d6d",
-        "#ff85a2",
-        "#ffd166",
-        "#ffffff",
-        "#ff99cc"
-    ];
-
-    for (let i = 0; i < 18; i++) {
-        const firework = document.createElement("div");
-        firework.className = "firework";
-
-        firework.style.left = Math.random() * window.innerWidth + "px";
-        firework.style.top = Math.random() * (window.innerHeight * 0.6) + "px";
-
-        firework.style.setProperty("--color", colors[Math.floor(Math.random() * colors.length)]);
-
-        document.body.appendChild(firework);
-
-        setTimeout(() => firework.remove(), 1200);
-    }
-}
-
-function startCelebration() {
-    launchFireworks();
-
-    let interval = setInterval(launchFireworks, 900);
-
-    setTimeout(() => clearInterval(interval), 7000);
-}
