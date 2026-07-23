@@ -251,19 +251,30 @@ margin:10px 0;
 100%{transform:scale(1);}
 }
 
-.cake{
-font-size:130px;
-animation:bounce 2s infinite;
+.cake-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:40px 0;
+    position:relative;
 }
 
-@keyframes bounce{
-50%{
-transform:translateY(-15px);
-}
+.real-cake{
+    width:260px;
+    max-width:80%;
+    height:auto;
+    display:block;
+    animation: cakeFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 25px rgba(0,0,0,.25));
 }
 
-#cakeScreen button{
-margin-top:25px;
+@keyframes cakeFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
 }
 
 /* ===================== */
